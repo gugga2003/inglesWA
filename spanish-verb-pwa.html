@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spanish Verb Conjugation</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#3367D6">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="card-inner">
+                <div class="card-face card-front">
+                    <div class="card-title">PRESENTE</div>
+                    <div id="present" class="card-verb">GO</div>
+                    <div id="meaning" class="card-meaning">ir</div>
+                </div>
+                <div class="card-face card-back">
+                    <div class="card-title">PASADO SIMPLE</div>
+                    <div id="past-simple" class="card-verb">WENT</div>
+                    <div id="past-meaning" class="card-meaning">fui/fue</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <div class="button-container">
+            <button id="prevBtn">←</button>
+            <button id="flipBtn">►</button>
+            <button id="nextBtn">→</button>
+        </div>
+
+        <div class="small-button-container">
+            <button id="shuffleBtn">🔀</button>
+            <button id="darkModeBtn">🌙</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/service-worker.js')
+              .then((reg) => console.log('Service worker registered', reg))
+              .catch((err) => console.log('Service worker not registered', err));
+        }
+    </script>
+</body>
+</html>
